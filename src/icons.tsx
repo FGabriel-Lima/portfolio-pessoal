@@ -1,4 +1,23 @@
+import type { ReactNode } from 'react'
+
 type Props = { className?: string }
+
+function Stroke({ className, children }: Props & { children: ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      {children}
+    </svg>
+  )
+}
 
 export function WhatsAppIcon({ className }: Props) {
   return (
@@ -24,38 +43,16 @@ export function LinkedInIcon({ className }: Props) {
   )
 }
 
-export function MailIcon({ className }: Props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  )
-}
+export const MailIcon = ({ className }: Props) => (
+  <Stroke className={className}>
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </Stroke>
+)
 
-export function ArrowIcon({ className }: Props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M7 7h10v10" />
-      <path d="M7 17 17 7" />
-    </svg>
-  )
-}
+export const ArrowIcon = ({ className }: Props) => (
+  <Stroke className={className}>
+    <path d="M7 7h10v10" />
+    <path d="M7 17 17 7" />
+  </Stroke>
+)
