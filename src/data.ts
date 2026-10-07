@@ -62,7 +62,7 @@ export const projects: Project[] = [
       'Este site. Página única, leve e responsiva, publicada na Vercel com deploy automático a cada push na main.',
     stack: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Vercel'],
     image: '/projects/portfolio.svg',
-    codeUrl: 'https://github.com/FGabriel-Lima/portf-lio-pessoal',
+    codeUrl: 'https://github.com/FGabriel-Lima/portfolio-pessoal',
   },
   {
     title: 'FIFA Career Mode Manager',
