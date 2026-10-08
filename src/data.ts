@@ -106,7 +106,7 @@ export const projects: Project[] = [
     title: 'Ottolog · Portal de Vagas',
     description: 'Plataforma de vagas com área pública para candidatos e painel administrativo com login.',
     stack: ['React', 'TypeScript', 'Node', 'Prisma', 'PostgreSQL'],
-    image: '/projects/ottolog.svg',
+    image: '/projects/ottolog.png',
     codeUrl: 'https://github.com/FGabriel-Lima/job-portal-fullstack',
   },
   {
