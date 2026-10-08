@@ -122,6 +122,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     image: '/projects/portfolio.png',
     codeUrl: 'https://github.com/FGabriel-Lima/portfolio-pessoal',
+    liveUrl: 'https://gabriellima.vercel.app',
   },
 ]
 
