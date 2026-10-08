@@ -15,24 +15,16 @@ export const whatsappUrl = `https://wa.me/${profile.whatsapp}?text=${encodeURICo
   'Olá Gabriel! Vi seu portfólio e quero um orçamento para um site.',
 )}`
 
-export const heroStats = [
-  { value: '3+', label: 'projetos full stack' },
-  { value: 'React · Node', label: 'stack principal' },
-  { value: 'UFC', label: 'Eng. de Software' },
-]
+// O que o cliente recebe em todo projeto (aparece no topo).
+export const included = ['Domínio e hospedagem configurados', 'Feito para o celular', 'Suporte depois da entrega']
 
-export const highlights: { icon: IconName; value: string; label: string }[] = [
-  { icon: 'folder', value: '3+ projetos', label: 'completos, do banco à tela' },
-  { icon: 'layers', value: 'Full Stack', label: 'front-end, back-end e banco' },
-  { icon: 'graduation', value: 'UFC', label: 'Engenharia de Software' },
-  { icon: 'pin', value: 'Quixadá, CE', label: 'atendimento remoto' },
-]
-
-export const pillars: { icon: IconName; title: string; text: string }[] = [
-  { icon: 'target', title: 'Foco no resultado', text: 'Cada página tem um objetivo claro: trazer clientes até você.' },
-  { icon: 'code', title: 'Código limpo', text: 'Organizado para crescer junto com o seu negócio.' },
-  { icon: 'smartphone', title: 'Pensado para o celular', text: 'É de lá que vem a maior parte das visitas.' },
-  { icon: 'wrench', title: 'Feito sob medida', text: 'Nada de template pronto: tudo construído para você.' },
+// Ficha rápida da seção Sobre: só fatos.
+export const facts = [
+  { label: 'Formação', value: 'Engenharia de Software · UFC' },
+  { label: 'Base', value: 'Quixadá, CE · atendo remoto' },
+  { label: 'Faço', value: 'Sites, landing pages e sistemas web' },
+  { label: 'Stack principal', value: 'React, TypeScript, Node, PostgreSQL' },
+  { label: 'No GitHub', value: '3 sistemas completos publicados' },
 ]
 
 export const services: { icon: IconName; title: string; description: string; benefit: string }[] = [

@@ -1,9 +1,8 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import {
   faq,
-  heroStats,
-  highlights,
-  pillars,
+  facts,
+  included,
   process,
   profile,
   projects,
@@ -101,56 +100,34 @@ function Hero() {
       <div className={`${container} relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24`}>
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-line bg-card/60 px-3 py-1.5 text-xs text-fg-muted">
-            <Icon name="sparkles" className="h-3.5 w-3.5 text-cyan" />
-            Disponível para novos projetos
+            <span className="h-1.5 w-1.5 rounded-full bg-whatsapp shadow-[0_0_8px_#25d366]" />
+            Disponível para novos projetos · {profile.location}
           </p>
-          <h1 className="mt-6 font-display text-5xl font-bold tracking-tight sm:text-6xl">{profile.name}</h1>
-          <p className="mt-3 text-fg-muted sm:text-lg">{profile.role}</p>
-          <p className="mt-6 font-display text-2xl font-bold leading-snug sm:text-3xl">
-            Crio <span className="text-grad">sites e sistemas web</span> que colocam o seu negócio na internet do
-            jeito certo.
+          <h1 className="mt-7 font-display text-[2.6rem] font-bold leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-[3.6rem]">
+            Sites e sistemas que colocam o seu negócio <span className="text-grad whitespace-nowrap">no ar.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-fg-muted">
+            Sou {profile.name}, desenvolvedor full stack. Eu planejo, desenvolvo e publico o seu site: rápido,
+            bonito no celular e com o WhatsApp a um toque do seu cliente.
           </p>
-          <p className="mt-5 max-w-xl leading-relaxed text-fg-muted">
-            Do site institucional ao sistema com login e banco de dados: páginas rápidas, bonitas no celular e
-            feitas para trazer clientes até você.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-9 flex flex-wrap gap-4">
             <a href={whatsappUrl} {...ext} className={btnPrimary}>
-              Solicitar orçamento <Icon name="arrowRight" className="h-4 w-4" />
+              <WhatsAppIcon className="h-5 w-5" /> Pedir orçamento
             </a>
             <a href="#portfolio" className={btnOutline}>
-              <Icon name="folder" className="h-4 w-4" /> Ver projetos
+              Ver projetos <Icon name="arrowRight" className="h-4 w-4" />
             </a>
           </div>
-          <dl className="mt-10 flex flex-wrap gap-x-6 gap-y-4">
-            {heroStats.map((s, i) => (
-              <div key={s.label} className={i > 0 ? 'border-l border-line pl-6' : ''}>
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-xl font-bold">{s.value}</dd>
-                <dd className="text-sm text-fg-muted">{s.label}</dd>
-              </div>
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-fg-muted" aria-label="Incluído em todo projeto">
+            {included.map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <Icon name="check" className="h-4 w-4 text-cyan" />
+                {item}
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
         <HeroArt />
-      </div>
-    </section>
-  )
-}
-
-function Highlights() {
-  return (
-    <section className="border-y border-line bg-card/40">
-      <div className={`${container} grid grid-cols-2 gap-8 py-12 lg:grid-cols-4`}>
-        {highlights.map((h, i) => (
-          <div key={h.value} className="reveal text-center" style={{ animationDelay: `${i * 80}ms` }}>
-            <span className={`${iconTile} mx-auto`}>
-              <Icon name={h.icon} className="h-5 w-5" />
-            </span>
-            <p className="text-grad mt-4 font-display text-xl font-bold sm:text-3xl">{h.value}</p>
-            <p className="mt-1 text-sm text-fg-muted">{h.label}</p>
-          </div>
-        ))}
       </div>
     </section>
   )
@@ -166,25 +143,40 @@ function About() {
             Sites que <span className="text-grad">trabalham</span> pelo seu negócio.
           </h2>
           <p className="mt-6 leading-relaxed text-fg-muted">
-            Sou desenvolvedor full stack e estudo Engenharia de Software na Universidade Federal do Ceará, em
-            Quixadá. Já construí sistemas completos, do banco de dados à tela, como um portal de vagas com painel
-            administrativo e um gerenciador de modo carreira.
+            Estudo Engenharia de Software na Universidade Federal do Ceará e construo sistemas completos, do banco
+            de dados à tela: um portal de vagas com painel administrativo, um gerenciador de modo carreira e este
+            site que você está vendo.
           </p>
           <p className="mt-4 leading-relaxed text-fg-muted">
             Trabalho perto de quem contrata: entendo o que o negócio precisa, entrego algo simples que funcione e
             melhoro a partir daí.
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {pillars.map((p, i) => (
-            <div key={p.title} className="card card-hover reveal p-6" style={{ animationDelay: `${i * 80}ms` }}>
-              <span className={iconTile}>
-                <Icon name={p.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="mt-5 font-display font-bold">{p.title}</h3>
-              <p className="mt-2 text-sm text-fg-muted">{p.text}</p>
+        <div className="card reveal p-7 sm:p-8" style={{ animationDelay: '100ms' }}>
+          <div className="flex items-center gap-4">
+            <span className="bg-grad grid h-14 w-14 place-items-center rounded-2xl font-display text-xl font-bold text-white">
+              GL
+            </span>
+            <div>
+              <p className="font-display text-lg font-bold">{profile.name}</p>
+              <p className="text-sm text-fg-muted">Desenvolvedor Full Stack</p>
             </div>
-          ))}
+          </div>
+          <dl className="mt-6 divide-y divide-line border-t border-line">
+            {facts.map((f) => (
+              <div key={f.label} className="grid gap-1 py-3.5 sm:grid-cols-[8.5rem_1fr]">
+                <dt className="text-sm text-fg-muted">{f.label}</dt>
+                <dd className="text-sm font-medium">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <a
+            href={profile.github}
+            {...ext}
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan hover:underline"
+          >
+            <GitHubIcon className="h-4 w-4" /> Ver meu código no GitHub
+          </a>
         </div>
       </div>
     </section>
@@ -497,7 +489,6 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Highlights />
         <About />
         <Services />
         <Stack />
