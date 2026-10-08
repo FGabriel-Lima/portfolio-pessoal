@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <linearGradient id="pitch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23254a"/><stop offset="1" stop-color="#1e2042"/></linearGradient>
+    <linearGradient id="pitch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2040"/><stop offset="1" stop-color="#181b36"/></linearGradient>
   </defs>
-  <rect width="1280" height="720" fill="#14152b"/>
+  <rect width="1280" height="720" fill="#0f1120"/>
 
-  <rect x="110" y="80" width="1060" height="680" rx="26" fill="#1b1d38" stroke="#2c2f52" stroke-width="2"/>
+  <rect x="110" y="80" width="1060" height="680" rx="26" fill="#161a2e" stroke="#2a2f4f" stroke-width="2"/>
   <text x="160" y="150" font-size="30" font-weight="700" fill="#f1ece2">Career Manager</text>
-  <rect x="930" y="118" width="190" height="42" rx="21" fill="#e9b26a"/>
-  <text x="1025" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#14152b">Temporada 2025/26</text>
+  <rect x="930" y="118" width="190" height="42" rx="21" fill="#6d8bff"/>
+  <text x="1025" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#0f1120">Temporada 2025/26</text>
 
-  <rect x="160" y="190" width="460" height="500" rx="20" fill="url(#pitch)" stroke="#2c2f52" stroke-width="2"/>
+  <rect x="160" y="190" width="460" height="500" rx="20" fill="url(#pitch)" stroke="#2a2f4f" stroke-width="2"/>
   <g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="3">
     <rect x="185" y="215" width="410" height="450" rx="4"/>
     <line x1="185" y1="440" x2="595" y2="440"/>
@@ -17,7 +17,7 @@
     <rect x="300" y="215" width="180" height="80"/>
     <rect x="300" y="585" width="180" height="80"/>
   </g>
-  <g fill="#e9b26a" stroke="#14152b" stroke-width="4">
+  <g fill="#6d8bff" stroke="#0f1120" stroke-width="4">
     <circle cx="390" cy="635" r="18"/>
     <circle cx="245" cy="560" r="18"/><circle cx="335" cy="575" r="18"/><circle cx="445" cy="575" r="18"/><circle cx="535" cy="560" r="18"/>
     <circle cx="280" cy="455" r="18"/><circle cx="390" cy="475" r="18"/><circle cx="500" cy="455" r="18"/>
@@ -25,20 +25,20 @@
   </g>
   <text x="390" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#f1ece2" opacity=".7">4-3-3</text>
 
-  <rect x="660" y="190" width="460" height="500" rx="20" fill="#14152b" stroke="#2c2f52" stroke-width="2"/>
+  <rect x="660" y="190" width="460" height="500" rx="20" fill="#0f1120" stroke="#2a2f4f" stroke-width="2"/>
   <text x="690" y="236" font-size="16" font-weight="700" fill="#a9a6bd" letter-spacing="2">POS</text>
   <text x="770" y="236" font-size="16" font-weight="700" fill="#a9a6bd" letter-spacing="2">ELENCO</text>
   <text x="1090" y="236" text-anchor="end" font-size="16" font-weight="700" fill="#a9a6bd" letter-spacing="2">OVR</text>
-  <line x1="690" y1="256" x2="1090" y2="256" stroke="#2c2f52" stroke-width="2"/>
+  <line x1="690" y1="256" x2="1090" y2="256" stroke="#2a2f4f" stroke-width="2"/>
   <g font-size="18">
-    <text x="690" y="300" font-weight="700" fill="#e9b26a">ATA</text><rect x="770" y="286" width="190" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="300" text-anchor="end" font-weight="700" fill="#f1ece2">88</text>
-    <text x="690" y="352" font-weight="700" fill="#e9b26a">PE</text><rect x="770" y="338" width="160" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="352" text-anchor="end" font-weight="700" fill="#f1ece2">85</text>
-    <text x="690" y="404" font-weight="700" fill="#e9b26a">MEI</text><rect x="770" y="390" width="210" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="404" text-anchor="end" font-weight="700" fill="#f1ece2">86</text>
-    <text x="690" y="456" font-weight="700" fill="#e9b26a">VOL</text><rect x="770" y="442" width="150" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="456" text-anchor="end" font-weight="700" fill="#f1ece2">82</text>
-    <text x="690" y="508" font-weight="700" fill="#c9a27a">ZAG</text><rect x="770" y="494" width="180" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="508" text-anchor="end" font-weight="700" fill="#f1ece2">84</text>
-    <text x="690" y="560" font-weight="700" fill="#c9a27a">LD</text><rect x="770" y="546" width="140" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="560" text-anchor="end" font-weight="700" fill="#f1ece2">80</text>
+    <text x="690" y="300" font-weight="700" fill="#6d8bff">ATA</text><rect x="770" y="286" width="190" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="300" text-anchor="end" font-weight="700" fill="#f1ece2">88</text>
+    <text x="690" y="352" font-weight="700" fill="#6d8bff">PE</text><rect x="770" y="338" width="160" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="352" text-anchor="end" font-weight="700" fill="#f1ece2">85</text>
+    <text x="690" y="404" font-weight="700" fill="#6d8bff">MEI</text><rect x="770" y="390" width="210" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="404" text-anchor="end" font-weight="700" fill="#f1ece2">86</text>
+    <text x="690" y="456" font-weight="700" fill="#6d8bff">VOL</text><rect x="770" y="442" width="150" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="456" text-anchor="end" font-weight="700" fill="#f1ece2">82</text>
+    <text x="690" y="508" font-weight="700" fill="#a77bff">ZAG</text><rect x="770" y="494" width="180" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="508" text-anchor="end" font-weight="700" fill="#f1ece2">84</text>
+    <text x="690" y="560" font-weight="700" fill="#a77bff">LD</text><rect x="770" y="546" width="140" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="560" text-anchor="end" font-weight="700" fill="#f1ece2">80</text>
     <text x="690" y="612" font-weight="700" fill="#a9a6bd">GOL</text><rect x="770" y="598" width="170" height="14" rx="7" fill="#ffffff" opacity=".14"/><text x="1090" y="612" text-anchor="end" font-weight="700" fill="#f1ece2">87</text>
   </g>
-  <rect x="690" y="638" width="400" height="30" rx="10" fill="#e9b26a" opacity=".15"/>
-  <text x="890" y="659" text-anchor="middle" font-size="16" font-weight="700" fill="#e9b26a">Média do elenco: 84,6</text>
+  <rect x="690" y="638" width="400" height="30" rx="10" fill="#6d8bff" opacity=".15"/>
+  <text x="890" y="659" text-anchor="middle" font-size="16" font-weight="700" fill="#6d8bff">Média do elenco: 84,6</text>
 </svg>

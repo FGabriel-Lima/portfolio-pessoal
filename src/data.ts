@@ -1,7 +1,9 @@
 // Única fonte de conteúdo do site. Para trocar texto, link ou projeto, edite só aqui.
+import type { IconName } from './icons'
 
 export const profile = {
   name: 'Gabriel Lima',
+  role: 'Desenvolvedor Full Stack · Estudante de Engenharia de Software',
   location: 'Quixadá, CE',
   email: 'fgabriellimace@gmail.com',
   whatsapp: '5588981988626',
@@ -10,30 +12,92 @@ export const profile = {
 }
 
 export const whatsappUrl = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
-  'Olá Gabriel! Vi seu portfólio e quero conversar sobre um site.',
+  'Olá Gabriel! Vi seu portfólio e quero um orçamento para um site.',
 )}`
 
-// Opcional: o que você estava ouvindo no último deploy. Vazio = a frase não aparece.
-export const listening = { song: '', artist: '', url: '' }
+export const heroStats = [
+  { value: '3+', label: 'projetos full stack' },
+  { value: 'React · Node', label: 'stack principal' },
+  { value: 'UFC', label: 'Eng. de Software' },
+]
 
-export const services = [
+export const highlights: { icon: IconName; value: string; label: string }[] = [
+  { icon: 'folder', value: '3+ projetos', label: 'completos, do banco à tela' },
+  { icon: 'layers', value: 'Full Stack', label: 'front-end, back-end e banco' },
+  { icon: 'graduation', value: 'UFC', label: 'Engenharia de Software' },
+  { icon: 'pin', value: 'Quixadá, CE', label: 'atendimento remoto' },
+]
+
+export const pillars: { icon: IconName; title: string; text: string }[] = [
+  { icon: 'target', title: 'Foco no resultado', text: 'Cada página tem um objetivo claro: trazer clientes até você.' },
+  { icon: 'code', title: 'Código limpo', text: 'Organizado para crescer junto com o seu negócio.' },
+  { icon: 'smartphone', title: 'Pensado para o celular', text: 'É de lá que vem a maior parte das visitas.' },
+  { icon: 'wrench', title: 'Feito sob medida', text: 'Nada de template pronto: tudo construído para você.' },
+]
+
+export const services: { icon: IconName; title: string; description: string; benefit: string }[] = [
   {
-    title: 'Site institucional',
-    description:
-      'quem você é, o que faz e como falar com você, num endereço fácil de achar no Google.',
+    icon: 'globe',
+    title: 'Sites Institucionais',
+    description: 'Presença profissional para sua empresa, fácil de achar no Google.',
+    benefit: 'Mais confiança para quem te procura.',
   },
   {
-    title: 'Landing page',
-    description: 'uma página com um objetivo só: vender um produto, divulgar um evento ou captar contatos.',
+    icon: 'rocket',
+    title: 'Landing Pages',
+    description: 'Uma página com um objetivo só: vender, divulgar ou captar contatos.',
+    benefit: 'Mais contatos, menos distração.',
   },
   {
-    title: 'Sistema web sob medida',
-    description: 'painéis, cadastros e controles com login e banco de dados, do jeito que o seu negócio funciona.',
+    icon: 'dashboard',
+    title: 'Sistemas Web',
+    description: 'Painéis, cadastros e controles com login e banco de dados.',
+    benefit: 'Menos planilha, mais controle.',
   },
   {
-    title: 'Manutenção e melhorias',
-    description: 'seu site já existe mas está lento, antigo ou quebrado no celular? Eu reformo sem começar do zero.',
+    icon: 'wrench',
+    title: 'Manutenção e Melhorias',
+    description: 'Site lento, antigo ou quebrado no celular? Eu reformo sem começar do zero.',
+    benefit: 'Seu site rápido e atual de novo.',
   },
+]
+
+// Ícones do Devicon. `dark: true` = logo preto, invertido para o fundo escuro.
+export const stack: Record<string, { name: string; icon: string; dark?: boolean }[]> = {
+  'Front-end': [
+    { name: 'React', icon: 'react' },
+    { name: 'TypeScript', icon: 'typescript' },
+    { name: 'JavaScript', icon: 'javascript' },
+    { name: 'Tailwind CSS', icon: 'tailwindcss' },
+    { name: 'Bootstrap', icon: 'bootstrap' },
+    { name: 'HTML5', icon: 'html5' },
+    { name: 'CSS3', icon: 'css3' },
+  ],
+  'Back-end': [
+    { name: 'Node.js', icon: 'nodejs' },
+    { name: 'Express', icon: 'express', dark: true },
+    { name: 'Java', icon: 'java' },
+    { name: 'Prisma', icon: 'prisma', dark: true },
+  ],
+  'Banco de Dados': [
+    { name: 'PostgreSQL', icon: 'postgresql' },
+    { name: 'MongoDB', icon: 'mongodb' },
+  ],
+  Ferramentas: [
+    { name: 'Git', icon: 'git' },
+    { name: 'GitHub', icon: 'github', dark: true },
+    { name: 'Vite', icon: 'vitejs' },
+    { name: 'Vercel', icon: 'vercel', dark: true },
+    { name: 'Postman', icon: 'postman' },
+  ],
+}
+
+export const process = [
+  { title: 'Conversa', text: 'Você me conta sobre o negócio e o que o site precisa resolver.' },
+  { title: 'Proposta', text: 'Escopo, prazo e valor por escrito, sem surpresa no meio do caminho.' },
+  { title: 'Desenvolvimento', text: 'Construo o site e envio prévias no ar para você acompanhar.' },
+  { title: 'Publicação', text: 'Configuro domínio e hospedagem e coloco tudo no ar.' },
+  { title: 'Suporte', text: 'Depois da entrega, sigo disponível para ajustes e melhorias.' },
 ]
 
 export type Project = {
@@ -47,52 +111,36 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Ottolog, portal de vagas',
-    description:
-      'Plataforma de vagas com área pública para candidatos e painel administrativo com login para gerenciar tudo.',
+    title: 'Ottolog · Portal de Vagas',
+    description: 'Plataforma de vagas com área pública para candidatos e painel administrativo com login.',
     stack: ['React', 'TypeScript', 'Node', 'Prisma', 'PostgreSQL'],
     image: '/projects/ottolog.svg',
     codeUrl: 'https://github.com/FGabriel-Lima/job-portal-fullstack',
   },
   {
     title: 'FIFA Career Mode Manager',
-    description: 'Gerenciador para o modo carreira do FIFA: elenco, temporadas e estatísticas, com login.',
-    stack: ['React', 'Express', 'Prisma', 'JWT'],
+    description: 'Gerenciador do modo carreira do FIFA: elenco, temporadas e estatísticas, com login.',
+    stack: ['React', 'Tailwind', 'Express', 'Prisma', 'JWT'],
     image: '/projects/fifa-manager.svg',
     codeUrl: 'https://github.com/FGabriel-Lima/fifa-career-mode-manager',
   },
   {
-    title: 'Este portfólio',
-    description: 'Página única e leve, publicada na Vercel com deploy automático a cada atualização.',
+    title: 'Portfólio Pessoal',
+    description: 'Este site: página única e responsiva, publicada na Vercel com deploy automático.',
     stack: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     image: '/projects/portfolio.png',
     codeUrl: 'https://github.com/FGabriel-Lima/portfolio-pessoal',
   },
 ]
 
-export const process = [
-  'Você me conta sobre o negócio e o que o site precisa resolver.',
-  'Eu envio escopo, prazo e valor por escrito, sem surpresa no meio do caminho.',
-  'Construo o site e te mando prévias no ar para você acompanhar e pedir ajustes.',
-  'Configuro domínio e hospedagem e coloco tudo no ar.',
-  'Depois da entrega, continuo disponível para ajustes e novas ideias.',
-]
-
-export const about = [
-  'Estudo Engenharia de Software na UFC, aqui em Quixadá, e construo sites e sistemas que resolvem problema de verdade, do portal de vagas ao gerenciador de carreira.',
-  'Gosto de trabalhar perto de quem vai usar o que eu faço: entender o que o negócio precisa, entregar algo simples que funcione e melhorar a partir daí.',
-]
-
-export const stack = ['React', 'TypeScript', 'Node', 'Express', 'Prisma', 'PostgreSQL', 'Tailwind']
-
 // Revise estas respostas com seus valores e prazos reais antes de divulgar o site.
 export const faq = [
   {
-    q: 'Quanto custa um site?',
-    a: 'Depende do tamanho e do que o site precisa fazer: uma landing page custa bem menos que um sistema com login. Me conta sua ideia no WhatsApp e eu envio um orçamento fechado, sem compromisso.',
+    q: 'Quanto custa um projeto?',
+    a: 'Depende do tamanho e do que o site precisa fazer: uma landing page custa bem menos que um sistema com login. Me chama no WhatsApp e eu envio um orçamento fechado, sem compromisso.',
   },
   {
-    q: 'Quanto tempo leva?',
+    q: 'Qual o prazo de desenvolvimento?',
     a: 'O prazo depende do escopo e vai escrito na proposta antes de começar. Durante o desenvolvimento você acompanha prévias do site no ar.',
   },
   {
@@ -100,10 +148,11 @@ export const faq = [
     a: 'Não. Eu te ajudo a registrar o domínio (por exemplo, suaempresa.com.br) e cuido da configuração da hospedagem e da publicação.',
   },
   {
-    q: 'Funciona bem no celular?',
+    q: 'O site funciona no celular?',
     a: 'Sim. Todo site é pensado primeiro para o celular, de onde vem a maior parte das visitas.',
   },
+  {
+    q: 'Você oferece suporte depois da entrega?',
+    a: 'Sim. Depois que o site estiver no ar, sigo disponível para ajustes, atualizações de conteúdo e melhorias.',
+  },
 ]
-
-// Coisas que você curte, no estilo da lista pessoal do Ryan. Vazio = a seção não aparece.
-export const joys: string[] = []

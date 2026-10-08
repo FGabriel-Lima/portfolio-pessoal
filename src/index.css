@@ -1,62 +1,29 @@
 @import "tailwindcss";
 
-/* Tema claro por padrão. Escuro pelo sistema ou pelo seletor (data-theme no <html>).
-   Paleta do sertão: papel creme, sol amarelo-claro e um laranja-barro de destaque. */
-:root {
-  --bg: #fffdf8;
-  --bg-soft: #f5f0e6;
-  --text: #17151f;
-  --text-soft: #4a4558;
-  --link: #1d4ed8;
-  --link-hover: #c2410c;
-  --theme: #fdeec4;
-  --theme-accent: #f2cf6b;
-  --offset: #c2410c;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #100f17;
-    --bg-soft: #1b1a25;
-    --text: #f2eee6;
-    --text-soft: #b9b3c7;
-    --link: #8db4ff;
-    --link-hover: #ff8a5c;
-    --theme: #2b2414;
-    --theme-accent: #6b5520;
-    --offset: #ff8a5c;
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #100f17;
-  --bg-soft: #1b1a25;
-  --text: #f2eee6;
-  --text-soft: #b9b3c7;
-  --link: #8db4ff;
-  --link-hover: #ff8a5c;
-  --theme: #2b2414;
-  --theme-accent: #6b5520;
-  --offset: #ff8a5c;
-  color-scheme: dark;
-}
-
-@theme inline {
-  --color-bg: var(--bg);
-  --color-bg-soft: var(--bg-soft);
-  --color-text: var(--text);
-  --color-text-soft: var(--text-soft);
-  --color-link: var(--link);
-  --color-theme: var(--theme);
-  --color-theme-accent: var(--theme-accent);
-  --color-offset: var(--offset);
+/* Linguagem visual baseada em jonasdiogo.dev: azul-noite, degradê azul → roxo, texto em ciano → roxo. */
+@theme {
+  --color-bg: oklch(14% 0.025 270);
+  --color-card: oklch(18% 0.03 270);
+  --color-muted: oklch(22% 0.03 270);
+  --color-fg: oklch(97% 0.005 270);
+  --color-fg-muted: oklch(70% 0.02 270);
+  --color-line: oklch(100% 0 0 / 0.1);
+  --color-blue: oklch(65% 0.21 250);
+  --color-cyan: oklch(78% 0.15 220);
+  --color-purple: oklch(60% 0.25 295);
+  --color-pink: oklch(65% 0.24 340);
   --color-whatsapp: #25d366;
 
-  --font-display: "Big Shoulders Display", Impact, sans-serif;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+:root {
+  --grad-primary: linear-gradient(135deg, oklch(60% 0.22 250), oklch(55% 0.26 295));
+  --grad-text: linear-gradient(135deg, oklch(78% 0.15 220), oklch(65% 0.25 295));
+  --grad-border: linear-gradient(135deg, oklch(60% 0.22 250 / 0.5), oklch(55% 0.26 295 / 0.5));
 }
 
 html {
@@ -64,42 +31,74 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: var(--font-sans);
-  accent-color: var(--offset);
+  -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-  background: var(--theme-accent);
-  color: var(--text);
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 @layer components {
-  /* Link "da web antiga": azul e sublinhado, como no site do Ryan. */
-  .link {
-    color: var(--link);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
+  .text-grad {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-  .link:hover {
-    color: var(--link-hover);
+  .bg-grad {
+    background-image: var(--grad-primary);
   }
 
-  .heading {
+  /* Card com borda em degradê azul → roxo. */
+  .card {
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    background:
+      linear-gradient(var(--color-card), var(--color-card)) padding-box,
+      var(--grad-border) border-box;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -20px oklch(55% 0.26 295 / 0.55);
+  }
+
+  .eyebrow {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: clamp(2.25rem, 6vw, 3.25rem);
-    line-height: 0.95;
-    letter-spacing: 0.005em;
+    color: var(--color-cyan);
   }
 
-  /* Cartões da faixa do topo: inclinam com a velocidade da rolagem. */
-  .tile {
-    transform: skewX(var(--skew, 0deg));
-    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.in {
+    animation: reveal 0.7s ease-out both;
   }
 }
 
@@ -107,7 +106,13 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .tile {
-    transform: none;
+  .reveal {
+    opacity: 1;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
