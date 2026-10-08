@@ -113,7 +113,7 @@ export const projects: Project[] = [
     title: 'FIFA Career Mode Manager',
     description: 'Gerenciador do modo carreira do FIFA: elenco, temporadas e estatísticas, com login.',
     stack: ['React', 'Tailwind', 'Express', 'Prisma', 'JWT'],
-    image: '/projects/fifa-manager.svg',
+    image: '/projects/fifa-manager.png',
     codeUrl: 'https://github.com/FGabriel-Lima/fifa-career-mode-manager',
   },
   {
